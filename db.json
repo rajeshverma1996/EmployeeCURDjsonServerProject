@@ -1,0 +1,28 @@
+{
+  "Employee": [
+    {
+      "id": 1,
+      "FirstName": "Kushal",
+      "LastName": "Mehta1",
+      "Department": "Software Devlopment",
+      "Position": "Tech Lead",
+      "Address1": "Add1",
+      "Address2": "Add2",
+      "State": "Orissa",
+      "City": "Bhubneswar",
+      "PinCode": "751002"
+    },
+    {
+      "FirstName": "Sanjay",
+      "LastName": "Singh",
+      "Department": "Software Devlopment",
+      "Position": "Tech Lead",
+      "Address1": "Bihar",
+      "Address2": "orissa",
+      "State": "Bihar",
+      "City": "Bihar Sharif",
+      "PinCode": "806789",
+      "id": 3
+    }
+  ]
+}

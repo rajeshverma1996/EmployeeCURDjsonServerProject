@@ -1,0 +1,95 @@
+<div class="container-fluid">
+<h1 class="text-center">Json Curd Operation Project</h1>
+<div class="row">
+  
+  <div class="col-sm-6">
+    <form [formGroup]="employeeForm" novalidate>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="first-name">First Name: </label>
+        </div>
+        <div class="col-sm-6">
+          <input id="first-name" type="text" formControlName="FirstName" [(ngModel)]="employeeModel.FirstName">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="last-name">Last Name: </label>
+        </div>
+        <div class="col-sm-6">
+          <input id="last-name" type="text" formControlName="LastName" [(ngModel)]="employeeModel.LastName">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="Department">Department: </label>
+        </div>
+        <div class="col-sm-6">
+          <input id="Department" type="text" formControlName="Department" [(ngModel)]="employeeModel.Department">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="Position">Position: </label>
+        </div>
+        <div class="col-sm-6">
+          <input id="Position" type="text" formControlName="Position" [(ngModel)]="employeeModel.Position">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="Address1">Address1: </label>
+        </div>
+        <div class="col-sm-6">
+          <input id="Address1" type="text" formControlName="Address1" [(ngModel)]="employeeModel.Address1">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="Address2">Address2: </label>
+        </div>
+        <div class="col-sm-6">
+          <input id="Address2" type="text" formControlName="Address2" [(ngModel)]="employeeModel.Address2">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="State">State: </label>
+        </div>
+        <div class="col-sm-6">
+          <input id="State" type="text" formControlName="State" [(ngModel)]="employeeModel.State">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="City">City: </label>
+        </div>
+        <div class="col-sm-6">
+          <input id="City" type="text" formControlName="City" [(ngModel)]="employeeModel.City">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="PinCode">Pin Code: </label>
+        </div>
+        <div class="col-sm-6">
+          <input id="PinCode" type="text" formControlName="PinCode" [(ngModel)]="employeeModel.PinCode">
+        </div>
+      </div>
+     
+      <div class="row width-100">
+        <button class="button btn pull-right"(click)="resetForm()">Cancel</button>
+        <button class="button btn pull-right"(click)="postEmployee()" *ngIf="!IsUpdate" >Save</button>
+        <button class="button btn pull-right"(click)="updateEmployee()" *ngIf="IsUpdate">Save</button>
+       </div>
+  
+    
+   
+      </form>
+  </div>
+ 
+</div>
+<div class="row">
+  <app-employee [employeeDetails]="employeeDetails" [filterEmployeeDetails]="filterEmployeeDetails" (empModel)="editEmployee($event)" (empId)="deleteEmployee($event)"></app-employee>
+</div>
+</div>

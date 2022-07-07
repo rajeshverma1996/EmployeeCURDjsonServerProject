@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+.col-sm-6{
+    
+    padding:5px;
+}
+.btn{
+    background-color: #1d2345 !important;
+    padding:5px !important;
+    color:#fff !important;
+    width:100px !important;
+    margin:10px !important
+}
+.width-100{
+    width:100%;
+}
+.actionBtn{
+    padding:5px;
+    text-decoration: underline;
+    color:blue;
+    cursor: pointer;
+}
+.deleteBtn{
+    color: red !important;
+}
+.searchBtn{
+    border:1px solid #000 !important;
+    width:300px !important;
+}
+.pd-10{
+    padding: 10px;
+}
+.btn.disabled{
+    opacity: .6;
+}
