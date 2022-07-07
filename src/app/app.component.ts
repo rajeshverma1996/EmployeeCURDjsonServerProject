@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Employee } from './model/employee';
 import { SharedService } from './shared.service';
 
@@ -21,15 +21,15 @@ export class AppComponent {
   ){}
   buildForm(){
     this.employeeForm = this.formBuilder.group({
-      FirstName: [''],
-      LastName: [''],
-      Department:[''],
-      Position:[''],
-      Address1:['',],
+      FirstName: ['',[Validators.required,Validators.pattern("^[a-zA-Z]+$")]],
+      LastName: ['',[Validators.required,Validators.pattern("^[a-zA-Z]+$")]],
+      Department:['',Validators.required],
+      Position:['',Validators.required],
+      Address1:['',Validators.required],
       Address2:[''],
-      State:[''],
-      City:[''],
-      PinCode:['']
+      State:['',Validators.required],
+      City:['',Validators.required],
+      PinCode:['',[Validators.required,Validators.minLength(6),Validators.pattern("^[0-9]+$")]]
     });
   }
  

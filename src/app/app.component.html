@@ -10,6 +10,17 @@
         </div>
         <div class="col-sm-6">
           <input id="first-name" type="text" formControlName="FirstName" [(ngModel)]="employeeModel.FirstName">
+          <div class='error sel-wid' *ngIf="employeeForm.controls.FirstName.touched">
+            <div *ngIf="employeeForm.controls.FirstName.hasError('required')">First Name is
+                required.
+            </div>
+            <div *ngIf="employeeForm.controls.FirstName.hasError('pattern')">First Name is
+                invalid.
+            </div>
+
+          
+        </div>
+
         </div>
       </div>
       <div class="row">
@@ -18,6 +29,16 @@
         </div>
         <div class="col-sm-6">
           <input id="last-name" type="text" formControlName="LastName" [(ngModel)]="employeeModel.LastName">
+          <div class='error sel-wid' *ngIf="employeeForm.controls.LastName.touched">
+            <div *ngIf="employeeForm.controls.LastName.hasError('required')">Last Name is
+                required.
+            </div>
+            <div *ngIf="employeeForm.controls.LastName.hasError('pattern')">Last Name is
+                invalid.
+            </div>
+
+          
+        </div>
         </div>
       </div>
       <div class="row">
@@ -26,6 +47,13 @@
         </div>
         <div class="col-sm-6">
           <input id="Department" type="text" formControlName="Department" [(ngModel)]="employeeModel.Department">
+          <div class='error sel-wid' *ngIf="employeeForm.controls.Department.touched">
+            <div *ngIf="employeeForm.controls.Department.hasError('required')">Department is
+                required.
+            </div>
+           
+          
+        </div>
         </div>
       </div>
       <div class="row">
@@ -34,6 +62,13 @@
         </div>
         <div class="col-sm-6">
           <input id="Position" type="text" formControlName="Position" [(ngModel)]="employeeModel.Position">
+          <div class='error sel-wid' *ngIf="employeeForm.controls.Position.touched">
+            <div *ngIf="employeeForm.controls.Position.hasError('required')">Position is
+                required.
+            </div>
+           
+          
+        </div>
         </div>
       </div>
       <div class="row">
@@ -42,6 +77,13 @@
         </div>
         <div class="col-sm-6">
           <input id="Address1" type="text" formControlName="Address1" [(ngModel)]="employeeModel.Address1">
+          <div class='error sel-wid' *ngIf="employeeForm.controls.Address1.touched">
+            <div *ngIf="employeeForm.controls.Address1.hasError('required')">Address1 is
+                required.
+            </div>
+           
+          
+        </div>
         </div>
       </div>
       <div class="row">
@@ -50,6 +92,7 @@
         </div>
         <div class="col-sm-6">
           <input id="Address2" type="text" formControlName="Address2" [(ngModel)]="employeeModel.Address2">
+          
         </div>
       </div>
       <div class="row">
@@ -58,6 +101,13 @@
         </div>
         <div class="col-sm-6">
           <input id="State" type="text" formControlName="State" [(ngModel)]="employeeModel.State">
+          <div class='error sel-wid' *ngIf="employeeForm.controls.State.touched">
+            <div *ngIf="employeeForm.controls.State.hasError('required')">State is
+                required.
+            </div>
+           
+          
+        </div>
         </div>
       </div>
       <div class="row">
@@ -66,6 +116,13 @@
         </div>
         <div class="col-sm-6">
           <input id="City" type="text" formControlName="City" [(ngModel)]="employeeModel.City">
+          <div class='error sel-wid' *ngIf="employeeForm.controls.City.touched">
+            <div *ngIf="employeeForm.controls.City.hasError('required')">City is
+                required.
+            </div>
+           
+          
+        </div>
         </div>
       </div>
       <div class="row">
@@ -73,14 +130,25 @@
           <label for="PinCode">Pin Code: </label>
         </div>
         <div class="col-sm-6">
-          <input id="PinCode" type="text" formControlName="PinCode" [(ngModel)]="employeeModel.PinCode">
+          <input id="PinCode" type="text" formControlName="PinCode" [(ngModel)]="employeeModel.PinCode" maxlength="6">
+          <div class='error sel-wid' *ngIf="employeeForm.controls.PinCode.touched">
+            <div *ngIf="employeeForm.controls.PinCode.hasError('required')">Pin Code is
+                required.
+            </div>
+            <div *ngIf="employeeForm.controls.PinCode.hasError('minlength')">Min length should be 6.
+          </div>
+          <div *ngIf="employeeForm.controls.PinCode.hasError('pattern')">Wrong Pattern.
+        </div>
+           
+          
+        </div>
         </div>
       </div>
      
       <div class="row width-100">
         <button class="button btn pull-right"(click)="resetForm()">Cancel</button>
-        <button class="button btn pull-right"(click)="postEmployee()" *ngIf="!IsUpdate" >Save</button>
-        <button class="button btn pull-right"(click)="updateEmployee()" *ngIf="IsUpdate">Save</button>
+        <button class="button btn pull-right"(click)="postEmployee()" *ngIf="!IsUpdate" [disabled]="employeeForm.invalid" >Save</button>
+        <button class="button btn pull-right"(click)="updateEmployee()" *ngIf="IsUpdate">Update</button>
        </div>
   
     

@@ -32,3 +32,15 @@
 .btn.disabled{
     opacity: .6;
 }
+input.ng-untouched{
+    border:1px solid yellow;
+}
+input.ng-valid{
+    border:1px solid #0f0;
+}
+input.ng-touched.ng-invalid{
+    border:1px solid #f00;
+}
+.sel-wid{
+    color:#f00;
+}
