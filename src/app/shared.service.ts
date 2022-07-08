@@ -13,6 +13,7 @@ export class SharedService {
   private postEmpolyeeApi='/Employee';
   private updateEmpolyeeApi='/Employee/';
   private deleteEmpolyeeApi='/Employee/';
+  private baseUrl1='assets/json/employee.json'
 
 
   constructor(
@@ -35,9 +36,16 @@ export class SharedService {
       
     }
     deleteEmployee(id:number):Observable<Employee[]>{
-      return this.httpClient.delete(this.baseUrl+this.updateEmpolyeeApi+id)
+      return this.httpClient.delete(this.baseUrl+this.deleteEmpolyeeApi+id)
       .pipe(map((res:any)=>res))
       
     }
+   
+    getEmployeeDetailsFromJsonFile():Observable<Employee[]>{
+      return this.httpClient.get(this.baseUrl1)
+      .pipe(map((res:any)=>res))
+      
+    }
+
 
 }

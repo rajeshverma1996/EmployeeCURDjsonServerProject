@@ -36,6 +36,7 @@ export class AppComponent {
   ngOnInit(){
     this.buildForm();
     this.getEmployee();
+    this.getEmployeeDetailsFromJsonFile();
   }
 
   postEmployee(){
@@ -52,7 +53,14 @@ export class AppComponent {
     )
 
   }
-
+  getEmployeeDetailsFromJsonFile(){
+    this.sharedService.getEmployeeDetailsFromJsonFile().subscribe(data=>{
+      console.log('getEmployee1',data);
+    },
+    error=>{
+      console.log(error)
+    })
+  }
   getEmployee(){
     this.sharedService.getEmployee().subscribe(data=>{
       console.log(data);
